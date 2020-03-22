@@ -1,6 +1,7 @@
 package gmedia.net.id.OnTime;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,12 +11,15 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Camera;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -351,15 +355,47 @@ public class FrontCamera {
 						String status = object.getJSONObject("metadata").getString("status");
 						String message = object.getJSONObject("metadata").getString("message");
 						if (status.equals("200")) {
-							Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
-							Open_front_camera.layoutBerhasilAbsen.setVisibility(View.VISIBLE);
-							Open_front_camera.layoutBerhasilAbsen.startAnimation(Open_front_camera.animation);
-							Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+
+							//Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+							final Dialog dialog = new Dialog(context);
+							dialog.setContentView(R.layout.popup_sukses);
+							dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+							RelativeLayout btnOk = (RelativeLayout) dialog.findViewById(R.id.btnOkPopupSukses);
+							btnOk.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View view) {
+									dialog.dismiss();
+									Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
+									Open_front_camera.layoutBerhasilAbsen.setVisibility(View.VISIBLE);
+									Open_front_camera.layoutBerhasilAbsen.startAnimation(Open_front_camera.animation);
+
+								}
+							});
+							dialog.setCanceledOnTouchOutside(false);
+							dialog.show();
+
 						} else {
-							Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
-							Open_front_camera.layoutGagalAbsen.setVisibility(View.VISIBLE);
-							Open_front_camera.layoutGagalAbsen.startAnimation(Open_front_camera.animation);
-							Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+							//Munculkan pesan gagal
+							//Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                            final Dialog dialog = new Dialog(context);
+                            dialog.setContentView(R.layout.popup_gagal_custom);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            TextView messageError = (TextView) dialog.findViewById(R.id.txtMessageError);
+                            TextView tvPesan = (TextView) dialog.findViewById(R.id.tv_pesan);
+                            tvPesan.setText("Ok");
+                            messageError.setText(message);
+                            RelativeLayout btnUlangi = (RelativeLayout) dialog.findViewById(R.id.btnUlangiLagiPopupGagalCustom);
+                            btnUlangi.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    dialog.dismiss();
+                                    Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
+                                    Open_front_camera.layoutGagalAbsen.setVisibility(View.VISIBLE);
+                                    Open_front_camera.layoutGagalAbsen.startAnimation(Open_front_camera.animation);
+                                }
+                            });
+							dialog.setCanceledOnTouchOutside(false);
+                            dialog.show();
 						}
 					} catch (JSONException e) {
 						e.printStackTrace();
@@ -369,7 +405,7 @@ public class FrontCamera {
 				@Override
 				public void onError(String result) {
 					proses.DismissDialog();
-					Toast.makeText(context, "terjadi kesalahan", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 				}
 			});
 
@@ -407,15 +443,45 @@ public class FrontCamera {
 						String status = object.getJSONObject("metadata").getString("status");
 						String message = object.getJSONObject("metadata").getString("message");
 						if (status.equals("200")) {
-							Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
-							Open_front_camera.layoutBerhasilAbsen.setVisibility(View.VISIBLE);
-							Open_front_camera.layoutBerhasilAbsen.startAnimation(Open_front_camera.animation);
-							Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+
+							//Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+							final Dialog dialog = new Dialog(context);
+							dialog.setContentView(R.layout.popup_sukses);
+							dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+							RelativeLayout btnOk = (RelativeLayout) dialog.findViewById(R.id.btnOkPopupSukses);
+							btnOk.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View view) {
+									dialog.dismiss();
+									Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
+									Open_front_camera.layoutBerhasilAbsen.setVisibility(View.VISIBLE);
+									Open_front_camera.layoutBerhasilAbsen.startAnimation(Open_front_camera.animation);
+
+								}
+							});
+							dialog.setCanceledOnTouchOutside(false);
+							dialog.show();
 						} else {
-							Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
-							Open_front_camera.layoutGagalAbsen.setVisibility(View.VISIBLE);
-							Open_front_camera.layoutGagalAbsen.startAnimation(Open_front_camera.animation);
-							Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                            //Munculkan pesan gagal
+                            //Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+                            final Dialog dialog = new Dialog(context);
+                            dialog.setContentView(R.layout.popup_gagal_custom);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            TextView messageError = (TextView) dialog.findViewById(R.id.txtMessageError);
+                            TextView tvPesan = (TextView) dialog.findViewById(R.id.tv_pesan);
+                            tvPesan.setText("Ok");
+                            messageError.setText(message);
+                            RelativeLayout btnUlangi = (RelativeLayout) dialog.findViewById(R.id.btnUlangiLagiPopupGagalCustom);
+                            btnUlangi.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    dialog.dismiss();
+                                    Open_front_camera.backgroundBtnTakePicture.setVisibility(View.GONE);
+							        Open_front_camera.layoutGagalAbsen.setVisibility(View.VISIBLE);
+							        Open_front_camera.layoutGagalAbsen.startAnimation(Open_front_camera.animation);
+                                }
+                            });
+                            dialog.show();
 						}
 					} catch (JSONException e) {
 						e.printStackTrace();
@@ -425,7 +491,7 @@ public class FrontCamera {
 				@Override
 				public void onError(String result) {
 					proses.DismissDialog();
-					Toast.makeText(context, "terjadi kesalahan", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 				}
 			});
 //                    Toast.makeText(Open_front_camera.this, "" + latitude + " & " + longitude, Toast.LENGTH_LONG).show();

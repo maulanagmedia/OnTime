@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ import gmedia.net.id.OnTime.utils.Proses;
 public class Open_front_camera extends AppCompatActivity {
 	private FrameLayout frameLayout;
 	public static RelativeLayout btnOpenCamera, layoutBerhasilAbsen, layoutGagalAbsen;
+	public static ImageView ivRefresh;
 	private Preview preview;
 	private Camera camera;
 	private FrontCamera frontCamera;
@@ -52,14 +54,17 @@ public class Open_front_camera extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		//No title bar is set for the activity
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
 		//Full screen is set for the Window
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.open_front_camera);
 		proses = new Proses(Open_front_camera.this);
 		imei = Arrays.toString(GetImei.getIMEI(Open_front_camera.this).toArray());
+
 		initUI();
 		savedInstanceState = getIntent().getExtras();
 		if (savedInstanceState != null) {
@@ -82,6 +87,7 @@ public class Open_front_camera extends AppCompatActivity {
 		preview = new Preview(Open_front_camera.this, camera);
 		animation = AnimationUtils.loadAnimation(Open_front_camera.this, R.anim.up_from_bottom);
 		frameLayout.addView(preview);
+
 		initAction();
 		animation.setAnimationListener(new Animation.AnimationListener() {
 			@Override
@@ -134,12 +140,14 @@ public class Open_front_camera extends AppCompatActivity {
 		backgroundBtnTakePicture = (CustomMapView) findViewById(R.id.backgroundBtnTakePicture);
 		backgroundBtnTakePicture.onCreate(null);
 		backgroundBtnTakePicture.onResume();
+		ivRefresh = (ImageView) findViewById(R.id.iv_refresh);
 		getLocation = new GetLocationAndShowMap();
 		getLocation.GetLocation(Open_front_camera.this, backgroundBtnTakePicture);
 //		getLocation.setPointMap();
 	}
 
 	private void initAction() {
+
 		btnOpenCamera.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -154,13 +162,22 @@ public class Open_front_camera extends AppCompatActivity {
 						getLocation.GetLocation(Open_front_camera.this, backgroundBtnTakePicture);
 						Log.d("click", "clicked");
 						camera.takePicture(null, null, FrontCamera.mPicture);
-						btnOpenCamera.setClickable(false);
+						//btnOpenCamera.setClickable(false);
 
 					}
 				}
 				/*if (afterSnapCamera) {
 					Absen();
 				}*/
+			}
+		});
+
+		ivRefresh.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+
+				getLocation = new GetLocationAndShowMap();
+				getLocation.GetLocation(Open_front_camera.this, backgroundBtnTakePicture);
 			}
 		});
 	}

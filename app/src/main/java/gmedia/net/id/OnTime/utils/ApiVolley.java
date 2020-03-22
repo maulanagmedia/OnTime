@@ -5,9 +5,14 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkError;
+import com.android.volley.NoConnectionError;
+import com.android.volley.ParseError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
@@ -18,6 +23,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+
+import gmedia.net.id.OnTime.R;
 
 
 /**
@@ -101,8 +108,23 @@ public class ApiVolley {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                callback.onError(error.toString());
+
+                String message = error.toString();
+                if (error instanceof NetworkError) {
+                    message = context.getResources().getString(R.string.msg_connection_issue);
+                } else if (error instanceof ServerError) {
+                    message = context.getResources().getString(R.string.msg_server_issue);
+                } else if (error instanceof AuthFailureError) {
+                    message = context.getResources().getString(R.string.msg_auth_issue);
+                } else if (error instanceof ParseError) {
+                    message = context.getResources().getString(R.string.msg_parsing_issue);
+                } else if (error instanceof NoConnectionError) {
+                    message = context.getResources().getString(R.string.msg_noinet_issue);
+                } else if (error instanceof TimeoutError) {
+                    message = context.getResources().getString(R.string.msg_timeout_issue);
+                }
                 ShowCustomDialog(context, showDialogFlag, failDialog);
+                callback.onError(error.toString());
                 return;
             }
         }) {
@@ -145,7 +167,7 @@ public class ApiVolley {
 
         // retry when timeout
         stringRequest.setRetryPolicy(new DefaultRetryPolicy(
-                8 * 1000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                20 * 1000, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
         ));
         stringRequest.setShouldCache(false);
         requestQueue.add(stringRequest);

@@ -136,36 +136,6 @@ public class ScanAbsen {
 						DialogGagal.message = message;
 						dialogGagal = new DialogGagal(context);
 						dialogGagal.ShowDialog();
-						/*final Dialog dialog = new Dialog(context);
-						dialog.setContentView(R.layout.popup_gagal);
-						dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-						RelativeLayout btnUlangi = (RelativeLayout) dialog.findViewById(R.id.btnUlangiLagiPopupGagal);
-						btnUlangi.setOnClickListener(new View.OnClickListener() {
-							@Override
-							public void onClick(View view) {
-								dialog.dismiss();
-							}
-						});
-						dialog.setCanceledOnTouchOutside(false);
-						dialog.show();
-						final Handler handler = new Handler();
-						final Runnable runnable = new Runnable() {
-							@Override
-							public void run() {
-								if (dialog.isShowing()) {
-									dialog.dismiss();
-								}
-							}
-						};
-
-						dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-							@Override
-							public void onDismiss(DialogInterface dialog) {
-								handler.removeCallbacks(runnable);
-							}
-						});
-						handler.postDelayed(runnable, 3000);
-						Toast.makeText(context, message, Toast.LENGTH_LONG).show();*/
 					}
 				} catch (JSONException e) {
 					e.printStackTrace();
@@ -175,7 +145,7 @@ public class ScanAbsen {
 			@Override
 			public void onError(String result) {
 				proses.DismissDialog();
-				Toast.makeText(context, "terjadi kesalahan", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 			}
 		});
 	}

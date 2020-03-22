@@ -54,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="Ulangi Lagi"
+                    android:id="@+id/tv_pesan"
                     android:textColor="#FFFFFF"
                     android:textSize="14sp" />
             </RelativeLayout>

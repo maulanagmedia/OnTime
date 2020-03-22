@@ -13,4 +13,11 @@
     <string name="title_notifications">Notifications</string>
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="msg_connection_issue">Cannot connect to Internet...Please check your connection!</string>
+    <string name="msg_server_issue">The server could not be found. Please try again after some time!!</string>
+    <string name="msg_auth_issue">Cannot connect to Internet...Please check your connection</string>
+    <string name="msg_parsing_issue">Parsing error! Please try again after some time!!</string>
+    <string name="msg_noinet_issue">Cannot connect to Internet...Please check your connection!</string>
+    <string name="msg_timeout_issue">Connection TimeOut! Please check your internet connection.</string>
 </resources>

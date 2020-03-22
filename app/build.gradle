@@ -6,7 +6,7 @@ android {
         applicationId "gmedia.net.id.OnTime"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 4
+        versionCode 5
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
