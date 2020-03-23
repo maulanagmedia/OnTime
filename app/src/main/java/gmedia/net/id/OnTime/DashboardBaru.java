@@ -1,6 +1,7 @@
 package gmedia.net.id.OnTime;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -54,6 +55,7 @@ import gmedia.net.id.OnTime.utils.GetLocation;
 import gmedia.net.id.OnTime.utils.LinkURL;
 import gmedia.net.id.OnTime.utils.Proses;
 import gmedia.net.id.OnTime.utils.SessionManager;
+import gmedia.net.id.OnTime.utils.UpdateLocationService;
 
 public class DashboardBaru extends Fragment {
 	private View view;
@@ -434,7 +436,6 @@ public class DashboardBaru extends Fragment {
 			}
 		});
 	}
-
 
 	private void prepareDataProfle() {
 		proses.ShowDialog();

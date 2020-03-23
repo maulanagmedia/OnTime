@@ -1,12 +1,16 @@
 package gmedia.net.id.OnTime;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.location.LocationManager;
@@ -25,14 +29,20 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import gmedia.net.id.OnTime.menu_approval_cuti.ApprovalCuti;
 import gmedia.net.id.OnTime.menu_approval_ijin.ApprovalIjin;
 import gmedia.net.id.OnTime.utils.ApiVolley;
 import gmedia.net.id.OnTime.utils.LinkURL;
 import gmedia.net.id.OnTime.utils.RuntimePermissionsActivity;
+import gmedia.net.id.OnTime.utils.SessionManager;
+import gmedia.net.id.OnTime.utils.UpdateLocationService;
 
 public class MainActivityBaru extends RuntimePermissionsActivity {
 	private Fragment fragment = null;
@@ -43,15 +53,27 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 	private boolean dialogActive = false;
 	private String version, latestVersion, link;
 	private boolean updateRequired;
+	private SessionManager session;
+	private Activity activity;
+
+	private String[] appPermission =  {
+			Manifest.permission.ACCESS_COARSE_LOCATION,
+			Manifest.permission.ACCESS_FINE_LOCATION
+	};
+	private final int PERMIOSSION_REQUEST_CODE = 1240;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_baru);
+
 		dialogActive = false;
 		if (android.os.Build.VERSION.SDK_INT > 25) {
 			statusCheck();
 		}
+
+		activity = MainActivityBaru.this;
+		session = new SessionManager(activity);
 		FirebaseApp.initializeApp(MainActivityBaru.this);
 		FirebaseMessaging.getInstance().subscribeToTopic("ontime");
 		token = FirebaseInstanceId.getInstance().getToken();
@@ -61,11 +83,13 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 			e.printStackTrace();
 			Log.d("token", e.getMessage());
 		}
+
 		initPermission();
 		if (fragment == null) {
 			fragment = new DashboardBaru();
 			callFragment(fragment);
 		}
+
 		Bundle bundle = getIntent().getExtras();
 		if (bundle != null) {
 			notifOnDead = bundle.getString("jenis", "");
@@ -79,9 +103,13 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 				startActivity(intent);
 			}*/
 		}
+
 		/*if (getIntent().getBooleanExtra("EXIT", false)) {
 			finish();
 		}*/
+
+		//Check installed application
+		checkInstallerApplication();
 	}
 
 	private void initPermission() {
@@ -210,6 +238,39 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 		if (android.os.Build.VERSION.SDK_INT > 25) {
 			statusCheck();
 		}
+
+		if (checkPermission()){
+
+			// diijinkan
+			// updating location service, disable for some reason
+			/*if(!isServiceRunning(MainActivityBaru.this, UpdateLocationService.class)){
+				startService(new Intent(MainActivityBaru.this, UpdateLocationService.class));
+			}*/
+		}else{
+
+			AlertDialog dialog = new AlertDialog.Builder(MainActivityBaru.this)
+					.setTitle("Informasi")
+					.setMessage("Aplikasi ini mengharuskan anda untuk mengininkan akses lokasi.")
+					.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+
+							checkPermission();
+						}
+					})
+					.show();
+
+		}
+	}
+
+	private boolean isServiceRunning(Context context, Class<?> serviceClass) {
+		ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+		for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+			if (serviceClass.getName().equals(service.service.getClassName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void checkVersion() {
@@ -316,5 +377,116 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 				}
 			});
 		}
+	}
+
+	private boolean checkPermission(){
+
+		List<String> permissionList = new ArrayList<>();
+		for (String perm : appPermission) {
+
+			if (ContextCompat.checkSelfPermission(MainActivityBaru.this, perm) != PackageManager.PERMISSION_GRANTED){
+
+				permissionList.add(perm);
+			}
+		}
+
+		if (!permissionList.isEmpty()) {
+
+			ActivityCompat.requestPermissions(MainActivityBaru.this, permissionList.toArray(new String[permissionList.size()]), PERMIOSSION_REQUEST_CODE);
+
+			return  false;
+		}
+
+		return  true;
+	}
+
+	// get installed application
+	private void checkInstallerApplication(){
+
+		Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+		mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+		List<ResolveInfo> pkgAppsList = getPackageManager().queryIntentActivities( mainIntent, 0);
+
+		JSONArray jPackage = new JSONArray();
+		for(ResolveInfo info: pkgAppsList){
+
+			JSONObject jo = new JSONObject();
+
+			try {
+				jo.put("id_karyawan", session.getKeyIdKaryawan());
+				jo.put("id_company", session.getKeyIdCompany());
+				jo.put("package", info.activityInfo.packageName);
+				jo.put("name", GetAppName(info.activityInfo.packageName));
+				jPackage.put(jo);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+
+		JSONObject jBody = new JSONObject();
+		try {
+			jBody.put("data", jPackage);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+		new ApiVolley(activity, jBody, "POST", LinkURL.saveInstalledApp, "", "", 0, new ApiVolley.VolleyCallback() {
+			@Override
+			public void onSuccess(String result) {
+
+				try {
+
+					JSONObject response = new JSONObject(result);
+					String status = response.getJSONObject("metadata").getString("status");
+
+					if(status.equals("200")){
+
+						String flag = response.getJSONObject("response").getString("flag");
+						String message = response.getJSONObject("response").getString("message");
+
+						if(flag.equals("1")){
+
+							Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+							Intent intentLogout = new Intent(activity, Login.class);
+							session.logoutUser();
+						}else{
+							Toast.makeText(activity, message, Toast.LENGTH_LONG).show();
+						}
+					}
+
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+
+			@Override
+			public void onError(String result) {
+
+			}
+		});
+	}
+
+	private String GetAppName(String ApkPackageName){
+
+		String Name = "";
+
+		ApplicationInfo applicationInfo;
+
+		PackageManager packageManager = activity.getPackageManager();
+
+		try {
+
+			applicationInfo = packageManager.getApplicationInfo(ApkPackageName, 0);
+
+			if(applicationInfo!=null){
+
+				Name = (String)packageManager.getApplicationLabel(applicationInfo);
+			}
+
+		}catch (PackageManager.NameNotFoundException e) {
+
+			e.printStackTrace();
+		}
+		return Name;
 	}
 }

@@ -160,6 +160,11 @@
             android:name=".MapsActivity"
             android:label="maps" />
         <activity android:name=".menu_scanlog.Scanlog" />
+
+        <service
+            android:name=".utils.UpdateLocationService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
