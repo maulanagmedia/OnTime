@@ -75,7 +75,15 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 		activity = MainActivityBaru.this;
 		session = new SessionManager(activity);
 		FirebaseApp.initializeApp(MainActivityBaru.this);
+
+		// Semua aplikasi
 		FirebaseMessaging.getInstance().subscribeToTopic("ontime");
+
+		// Per company
+		FirebaseMessaging.getInstance().subscribeToTopic(session.getKeyIdCompany());
+
+		FirebaseMessaging.getInstance().subscribeToTopic(session.getKeyIdPerusahaan());
+
 		token = FirebaseInstanceId.getInstance().getToken();
 		try {
 			Log.d("token", token);
@@ -250,7 +258,7 @@ public class MainActivityBaru extends RuntimePermissionsActivity {
 
 			AlertDialog dialog = new AlertDialog.Builder(MainActivityBaru.this)
 					.setTitle("Informasi")
-					.setMessage("Aplikasi ini mengharuskan anda untuk mengininkan akses lokasi.")
+					.setMessage("Aplikasi ini mengharuskan anda untuk mengijinkan akses lokasi.")
 					.setNeutralButton("Ok", new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {

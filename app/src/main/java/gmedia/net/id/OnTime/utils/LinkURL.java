@@ -6,6 +6,7 @@ public class LinkURL {
     public static String UrlLogin = BaseURLLocalHost + "Rest/auth";
     public static String saveInstalledApp = BaseURLLocalHost + "Rest/save_app";
     public static String ScanAbsen = BaseURLLocalHost + "Rest_Scan/scan";
+    public static String UpdateLocation = BaseURLLocalHost + "Rest_Scan/scan_location";
     public static String Profile = BaseURLLocalHost + "Rest_Profile/";
     public static String ListJadwalKerja = BaseURLLocalHost + "Rest_Jadwal/index";
     public static String listPengumuman = BaseURLLocalHost + "Rest_News/index";
@@ -26,5 +27,5 @@ public class LinkURL {
 	public static String viewTerlambat = BaseURLLocalHost + "Rest_Absensi/terlambat";
 	public static String upVersion = BaseURLLocalHost + "Rest/version";
 	public static String urlIpPublic = "https://api.ipify.org";
-	public static String updateLocation = "https://erpsmg.gmedia.id/hrd/rest/track_location/";
+	public static String updateLocationS = "https://erpsmg.gmedia.id/hrd/rest/track_location/";
 }

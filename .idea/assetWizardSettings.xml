@@ -30,17 +30,6 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
-                                      <entry key="clipartAsset">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_settings_black_24dp.xml" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
                                     </map>
                                   </option>
                                   <option name="values">
@@ -74,7 +63,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="22" />
+                                                <entry key="scalingPercent" value="51" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -84,8 +73,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundImage" value="E:\Gmedia\AndroidProject\OnTime\app\src\main\ic_launcher-web.png" />
-                                      <entry key="foregroundImage" value="E:\Gmedia\AndroidProject\OnTime\app\src\main\ic_launcher-web.png" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="efefef" />
+                                      <entry key="backgroundImage" value="$USER_HOME$/Downloads/iCON apps/ic_new_logo.png" />
+                                      <entry key="foregroundImage" value="$USER_HOME$/Downloads/iCON apps/ic_new_logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -102,17 +93,6 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="ffffff" />
-                                              </map>
-                                            </option>
-                                          </PersistentState>
-                                        </value>
-                                      </entry>
-                                      <entry key="clipartAsset">
-                                        <value>
-                                          <PersistentState>
-                                            <option name="values">
-                                              <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_refresh_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -135,7 +115,7 @@
                                     <map>
                                       <entry key="backgroundColor" value="169eec" />
                                       <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="imageAsset" value="E:\MasterOnTime\new asset\icon_OnTimeApp.png" />
+                                      <entry key="imageAsset" value="$APPLICATION_HOME_DIR$/bin/E:\MasterOnTime\new asset\icon_OnTimeApp.png" />
                                       <entry key="outputName" value="ic_refresh" />
                                     </map>
                                   </option>
@@ -163,11 +143,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
                           </map>
                         </option>
                       </PersistentState>

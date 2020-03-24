@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login_baru"
+    android:background="@drawable/ic_new_bglogin"
     tools:context=".Login">
 
     <LinearLayout
@@ -28,17 +28,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:padding="50dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/logo_login" />
-                <!--<TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ON TIME"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="#ffffff"
-                    android:textSize="@dimen/judulAbsenku"
-                    android:textStyle="bold" />-->
+                    android:padding="20dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_new_logow" />
+
             </RelativeLayout>
         </RelativeLayout>
 
@@ -89,14 +82,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_gravity="center_horizontal"
-                        android:layout_weight="1.5"
+                        android:layout_weight="1.6"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Masukan username dan password"
-                            android:textColor="#595858"
+                            android:textColor="#292728"
                             android:textSize="@dimen/textForm" />
 
                         <TextView
@@ -104,19 +97,19 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:text="untuk login aplikasi"
-                            android:textColor="#595858"
+                            android:textColor="#292728"
                             android:textSize="@dimen/textForm" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="0.8" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1.8"
+                        android:layout_weight="2"
                         android:orientation="vertical"
                         android:weightSum="1">
 
@@ -124,7 +117,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Username"
-                            android:textColor="#595858"
+                            android:textColor="#292728"
                             android:textSize="@dimen/textForm" />
 
                         <LinearLayout
@@ -163,7 +156,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="3dp"
-                            android:background="#595858">
+                            android:background="#292728">
 
                         </LinearLayout>
                     </LinearLayout>
@@ -176,7 +169,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1.8"
+                        android:layout_weight="2"
                         android:orientation="vertical"
                         android:weightSum="0.1">
 
@@ -184,7 +177,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Password"
-                            android:textColor="#595858"
+                            android:textColor="#292728"
                             android:textSize="@dimen/textForm" />
 
                         <LinearLayout
@@ -224,7 +217,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
                             android:layout_marginTop="3dp"
-                            android:background="#595858">
+                            android:background="#292728">
 
                         </LinearLayout>
                     </LinearLayout>

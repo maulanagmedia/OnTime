@@ -20,4 +20,7 @@
     <dimen name="widthBtnLogin">200dp</dimen>
     <dimen name="heightBtnLogin">40dp</dimen>
     <dimen name="textBtnLogin">18sp</dimen>
+
+    <dimen name="margin_big">16dp</dimen>
+
 </resources>

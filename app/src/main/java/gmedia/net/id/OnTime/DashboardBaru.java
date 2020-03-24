@@ -130,6 +130,7 @@ public class DashboardBaru extends Fragment {
 		btnMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+
 				final Dialog dialogMenu = new Dialog(context);
 				dialogMenu.getWindow().getAttributes().windowAnimations = R.style.animasiDialog;
 				dialogMenu.setContentView(R.layout.popup_menu);

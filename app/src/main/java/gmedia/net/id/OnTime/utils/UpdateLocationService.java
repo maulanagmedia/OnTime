@@ -104,7 +104,7 @@ public class UpdateLocationService extends Service {
             e.printStackTrace();
         }
 
-        ApiVolley request = new ApiVolley(ctx, new JSONObject(), "POST", LinkURL.updateLocation, "", "", 0, new ApiVolley.VolleyCallback() {
+        ApiVolley request = new ApiVolley(ctx, new JSONObject(), "POST", LinkURL.UpdateLocation, "", "", 0, new ApiVolley.VolleyCallback() {
             @Override
             public void onSuccess(String result) {
                 JSONObject responseAPI;

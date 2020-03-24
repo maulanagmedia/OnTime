@@ -130,7 +130,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 } else if (isiData.get(key).trim().equals("ijin")){
 					MainActivityBaru.stateNotif = 1;
 					intent.putExtra("notif", "ijin");
-				}
+				}else if(isiData.get(key).trim().equals("notif")){
+
+                    intent = new Intent(this, LocationUpdateActivity.class);
+                }
             } else {
                 intent.putExtra(key, isiData.get(key));
             }
