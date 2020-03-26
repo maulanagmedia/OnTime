@@ -191,6 +191,7 @@ public class Fragment_cuti extends Fragment {
 	}
 
 	private void prepareDataAddCuti() {
+
 		proses.ShowDialog();
 		JSONObject jBody = new JSONObject();
 		try {
@@ -204,6 +205,7 @@ public class Fragment_cuti extends Fragment {
 		ApiVolley request = new ApiVolley(context, jBody, "POST", LinkURL.addCuti, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
+
 				proses.DismissDialog();
 				try {
 					JSONObject object = new JSONObject(result);
@@ -228,7 +230,7 @@ public class Fragment_cuti extends Fragment {
 			@Override
 			public void onError(String result) {
 				proses.DismissDialog();
-				Toast.makeText(context, "Terjadi Kesalahan", Toast.LENGTH_LONG).show();
+				Toast.makeText(context, result, Toast.LENGTH_LONG).show();
 			}
 		});
 	}
