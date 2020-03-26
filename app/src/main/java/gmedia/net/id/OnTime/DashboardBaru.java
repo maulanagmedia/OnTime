@@ -97,7 +97,7 @@ public class DashboardBaru extends Fragment {
 			Window window = this.getActivity().getWindow();
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-			window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimaryDark));
+			window.setStatusBarColor(this.getResources().getColor(R.color.color_main));
 		}
 
 		/*if (latitude.equals("") || longitude.equals("")) {
@@ -236,7 +236,7 @@ public class DashboardBaru extends Fragment {
 					window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 					window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-						window.setStatusBarColor(dialogMenu.getContext().getColor(R.color.colorPrimaryDark));
+						window.setStatusBarColor(dialogMenu.getContext().getColor(R.color.color_main));
 					}
 				}
 			}

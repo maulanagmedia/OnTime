@@ -12,20 +12,20 @@
         android:layout_height="match_parent"
         android:background="@drawable/ic_new_background"
         android:orientation="vertical"
-        android:weightSum="16.6">
+        android:weightSum="16">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0.7"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="5">
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.2" />
 
             <RelativeLayout
                 android:id="@+id/menuDashboardBaru"
@@ -44,7 +44,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3.5" />
+                android:layout_weight="3.6" />
 
             <RelativeLayout
                 android:id="@+id/menuGantiPassword"
@@ -62,13 +62,13 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.25" />
+                android:layout_weight="0.2" />
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4">
+            android:layout_weight="3.5">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,460 +131,253 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="10"
+            android:layout_marginTop="@dimen/margin_super"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="0.7"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuAbsenMasukBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_absenm" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuAbsenKeluarBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_absenp" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuIstirahatBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_istirahat" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuKembaliKerjaBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_kembalikerja" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuMulaiLemburBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_mlembur" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/menuBerhentiLemburBaru"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_slembur" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/tombolSampaiTujuan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_sampai_tujuan" />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            card_view:cardBackgroundColor="#ffffff"
+                            card_view:cardCornerRadius="15dp"
+                            card_view:cardElevation="@dimen/margin_menu_elf">
+
+                            <RelativeLayout
+                                android:id="@+id/tombolPindahTujuan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/margin_menu">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_new_pindah_tujuan" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="11"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <ImageView
                 android:layout_width="0dp"
+                android:layout_weight="0.4"
+                android:paddingTop="@dimen/margin_big"
+                android:paddingBottom="@dimen/margin_big"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="4">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuAbsenMasukBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/absen_datang" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Absen Masuk"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuIstirahatBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/istirahat" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Istirahat"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuMulaiLemburBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/mulailembur" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Mulai Lembur"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/tombolSampaiTujuan"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/absenlapangan" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Sampai Tujuan"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:weightSum="4">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuAbsenKeluarBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/absenpulang" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Absen Pulang"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuKembaliKerjaBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/mulai_kerja" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Kembali Bekerja"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/menuBerhentiLemburBaru"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/selesailembur" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Berhenti Lembur"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="left"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5dp"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.55"
-                        card_view:cardBackgroundColor="#ffffff"
-                        card_view:cardCornerRadius="15dp"
-                        card_view:cardElevation="4dp"
-                        card_view:cardPreventCornerOverlap="false"
-                        card_view:cardUseCompatPadding="true">
-
-                        <RelativeLayout
-                            android:id="@+id/tombolPindahTujuan"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:gravity="center"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:layout_height="@dimen/imageSizeMenuUtamaDashboard"
-                                    android:src="@drawable/pindah_tempat" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Pindah Tujuan"
-                                    android:textColor="#000000"
-                                    android:textSize="@dimen/textSizeMenuUtamaDashboard" />
-                            </LinearLayout>
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
-            </LinearLayout>
+                android:src="@drawable/ic_new_logo"/>
         </LinearLayout>
     </LinearLayout>
 

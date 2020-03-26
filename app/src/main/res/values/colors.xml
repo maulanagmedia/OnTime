@@ -8,4 +8,6 @@
     <color name="statusbarkeluar">#E8B201</color>
     <color name="transparant">#00000000</color>
     <color name="colorNotif">#009CD9</color>
+
+    <color name="color_main">#34BFFA</color>
 </resources>
