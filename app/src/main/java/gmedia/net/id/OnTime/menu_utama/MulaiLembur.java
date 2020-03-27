@@ -5,6 +5,8 @@ import android.os.Handler;
 import androidx.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,6 +28,12 @@ public class MulaiLembur extends Activity {
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.mulai_lembur);
+		if (android.os.Build.VERSION.SDK_INT >= 21) {
+			Window window = this.getWindow();
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_blue));
+		}
 		/*if (DashboardBaru.latitude.equals("") || DashboardBaru.longitude.equals("")) {
 			getLocation = new GetLocation();
 			getLocation.GetLocation(MulaiLembur.this);
@@ -43,7 +51,7 @@ public class MulaiLembur extends Activity {
     }*/
 
     private void initUI() {
-        tanggal = (TextView) findViewById(R.id.txtDinoTanggalMulaiLembur);
+//        tanggal = (TextView) findViewById(R.id.txtDinoTanggalMulaiLembur);
         jam = (TextView) findViewById(R.id.txtJamMulaiLembur);
         menit = (TextView) findViewById(R.id.txtMenitMulaiLembur);
         btnCheckIn = (RelativeLayout) findViewById(R.id.tombolCheckInMulaiLembur);
@@ -57,7 +65,7 @@ public class MulaiLembur extends Activity {
 				SimpleDateFormat formatTgl = new SimpleDateFormat("dd MMMM yyyy");
 				SimpleDateFormat formatJam = new SimpleDateFormat("HH");
 				SimpleDateFormat formatMenit = new SimpleDateFormat("mm");
-				tanggal.setText(formatTgl.format(date));
+//				tanggal.setText(formatTgl.format(date));
 				jam.setText(formatJam.format(date));
 				menit.setText(formatMenit.format(date));
 				handler.postDelayed(this, 500);

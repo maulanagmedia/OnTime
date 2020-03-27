@@ -383,16 +383,6 @@ public class DashboardBaru extends Fragment {
 				((Activity) context).overridePendingTransition(R.anim.fade_in, R.anim.no_move);
 			}
 		});
-		menuSampaiTujuan.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				isSampaiTujuan = true;
-				isPindahTujuan = false;
-				Intent intent = new Intent(context, Open_front_camera.class);
-				intent.putExtra("absen", "sampai tujuan");
-				((Activity) context).startActivity(intent);
-			}
-		});
 		menuAbsenPulang.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -424,6 +414,16 @@ public class DashboardBaru extends Fragment {
 				Intent intent = new Intent(context, BerhentiLembur.class);
 				((Activity) context).startActivity(intent);
 				((Activity) context).overridePendingTransition(R.anim.fade_in, R.anim.no_move);
+			}
+		});
+		menuSampaiTujuan.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				isSampaiTujuan = true;
+				isPindahTujuan = false;
+				Intent intent = new Intent(context, Open_front_camera.class);
+				intent.putExtra("absen", "sampai tujuan");
+				((Activity) context).startActivity(intent);
 			}
 		});
 		menuPindahTujuan.setOnClickListener(new View.OnClickListener() {

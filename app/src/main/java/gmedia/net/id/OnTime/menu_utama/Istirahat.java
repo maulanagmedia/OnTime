@@ -5,6 +5,8 @@ import android.os.Handler;
 import androidx.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,6 +28,12 @@ public class Istirahat extends Activity {
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.istirahat);
+		if (android.os.Build.VERSION.SDK_INT >= 21) {
+			Window window = this.getWindow();
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_blue));
+		}
 		/*if (DashboardBaru.latitude.equals("") || DashboardBaru.longitude.equals("")) {
 			getLocation = new GetLocation();
 			getLocation.GetLocation(Istirahat.this);
@@ -48,7 +56,7 @@ public class Istirahat extends Activity {
     }*/
 
     private void initUI() {
-        tanggal = (TextView) findViewById(R.id.txtDinoTanggalIstirahat);
+//        tanggal = (TextView) findViewById(R.id.txtDinoTanggalIstirahat);
         jam = (TextView) findViewById(R.id.txtJamIstirahat);
         menit = (TextView) findViewById(R.id.txtMenitIstirahat);
         btnCheckIn = (RelativeLayout) findViewById(R.id.tombolCheckInIstirahat);
@@ -62,7 +70,7 @@ public class Istirahat extends Activity {
 				SimpleDateFormat formatTgl = new SimpleDateFormat("dd MMMM yyyy");
 				SimpleDateFormat formatJam = new SimpleDateFormat("HH");
 				SimpleDateFormat formatMenit = new SimpleDateFormat("mm");
-				tanggal.setText(formatTgl.format(date));
+//				tanggal.setText(formatTgl.format(date));
 				jam.setText(formatJam.format(date));
 				menit.setText(formatMenit.format(date));
 				handler.postDelayed(this, 500);

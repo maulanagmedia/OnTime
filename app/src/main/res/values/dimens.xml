@@ -21,6 +21,9 @@
     <dimen name="heightBtnLogin">40dp</dimen>
     <dimen name="textBtnLogin">18sp</dimen>
 
+    <dimen name="setWidthAbsenMasuk">160dp</dimen>
+    <dimen name="setHeightAbsenMasuk">150dp</dimen>
+
     <dimen name="margin_tiny">2dp</dimen>
     <dimen name="margin_small">4dp</dimen>
     <dimen name="margin_default">8dp</dimen>
@@ -28,5 +31,7 @@
     <dimen name="margin_super">24dp</dimen>
     <dimen name="margin_menu">6dp</dimen>
     <dimen name="margin_menu_elf">0dp</dimen>
+
+    <dimen name="sizeTime">90dp</dimen>
 
 </resources>

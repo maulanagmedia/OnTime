@@ -32,7 +32,7 @@ public class KembaliBekerja extends Activity {
 			Window window = this.getWindow();
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-			window.setStatusBarColor(this.getResources().getColor(R.color.statusbarkeluar));
+			window.setStatusBarColor(this.getResources().getColor(R.color.status_bar_red));
 		}
 		/*if (DashboardBaru.latitude.equals("") || DashboardBaru.longitude.equals("")) {
 			getLocation = new GetLocation();
@@ -62,7 +62,7 @@ public class KembaliBekerja extends Activity {
     }*/
 
     private void initUI() {
-        tanggal = (TextView) findViewById(R.id.txtDinoTanggalKembaliKerja);
+//        tanggal = (TextView) findViewById(R.id.txtDinoTanggalKembaliKerja);
         jam = (TextView) findViewById(R.id.txtJamKembaliKerja);
         menit = (TextView) findViewById(R.id.txtMenitKembaliKerja);
         btnCheckOut = (RelativeLayout) findViewById(R.id.tombolCheckOutKembaliKerja);
@@ -76,7 +76,7 @@ public class KembaliBekerja extends Activity {
 				SimpleDateFormat formatTgl = new SimpleDateFormat("dd MMMM yyyy");
 				SimpleDateFormat formatJam = new SimpleDateFormat("HH");
 				SimpleDateFormat formatMenit = new SimpleDateFormat("mm");
-				tanggal.setText(formatTgl.format(date));
+//				tanggal.setText(formatTgl.format(date));
 				jam.setText(formatJam.format(date));
 				menit.setText(formatMenit.format(date));
 				handler.postDelayed(this, 500);
