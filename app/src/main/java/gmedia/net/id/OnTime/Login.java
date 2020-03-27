@@ -170,7 +170,7 @@ public class Login extends AppCompatActivity {
 						@Override
 						public void onError(String result) {
 							proses.DismissDialog();
-							Toast.makeText(Login.this, "terjadi kesalahan", Toast.LENGTH_LONG).show();
+							Toast.makeText(Login.this, result, Toast.LENGTH_LONG).show();
 						}
 					});
 				}

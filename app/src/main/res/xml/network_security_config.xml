@@ -3,5 +3,6 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">192.168.20.36</domain>
         <domain includeSubdomains="true">gmedia.bz</domain>
+        <domain includeSubdomains="true">absenontime.com</domain>
     </domain-config>
 </network-security-config>
