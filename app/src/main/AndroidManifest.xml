@@ -114,6 +114,7 @@
         </activity>
         <activity
             android:name=".menu_pengajuan.MenuPengajuan"
+            android:windowSoftInputMode="stateHidden"
             android:screenOrientation="portrait" />
         <activity
             android:name=".menu_data.MenuData"

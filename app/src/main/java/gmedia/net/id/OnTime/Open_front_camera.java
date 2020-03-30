@@ -71,7 +71,7 @@ public class Open_front_camera extends AppCompatActivity {
 			if (savedInstanceState.getString("absen") != null) {
 				menuFrom = savedInstanceState.getString("absen");
 				if (menuFrom.equals("sampai tujuan")) {
-					btnOpenCamera.setBackgroundDrawable(ContextCompat.getDrawable(Open_front_camera.this, R.drawable.ic_btn_stujuan));
+					btnOpenCamera.setBackgroundDrawable(ContextCompat.getDrawable(Open_front_camera.this, R.drawable.bg_sampai_tujuan));
 				} else if (menuFrom.equals("pindah tujuan")) {
 					btnOpenCamera.setBackgroundDrawable(ContextCompat.getDrawable(Open_front_camera.this, R.drawable.ic_btn_ptujuan));
 				}
