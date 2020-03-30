@@ -99,5 +99,16 @@
                 android:textSize="@dimen/textSizeButtonCheckInOut"
                 android:textStyle="bold" />-->
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/checkin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/tombolCheckInMulaiLembur"
+            android:text="Mulai Lembur"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeButtonCheckInOut"
+            android:textStyle="bold" />
     </RelativeLayout>
 </LinearLayout>

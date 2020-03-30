@@ -89,15 +89,18 @@
             android:background="@drawable/bcg_btn_absen_masuk"
             android:clickable="true">
 
-            <!--<TextView
-                android:id="@+id/checkin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="CHECK IN"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeButtonCheckInOut"
-                android:textStyle="bold" />-->
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/checkin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/tombolCheckIn"
+            android:text="Absen Masuk"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeButtonCheckInOut"
+            android:textStyle="bold" />
+
     </RelativeLayout>
 </LinearLayout>
