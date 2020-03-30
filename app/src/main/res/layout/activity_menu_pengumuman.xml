@@ -4,35 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1581E8"
+    android:orientation="vertical"
     tools:context=".menu_pengumuman.MenuPengumuman">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_215sdp"
+        android:background="#18C1FE"
+        android:id="@+id/rl_imageheader"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pengumumanpic"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@+id/rl_imageheader"-->
+<!--        android:id="@+id/rl_konten">-->
 
     <TextView
         android:id="@+id/txtKosong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="KOSONG"
-        android:textColor="#ababab"
-        android:textSize="50sp"
-        android:visibility="gone"/>
+        android:text="Belum ada pengumuman"
+        android:textColor="#AEAEAE"
+        android:visibility="gone"
+        android:textSize="@dimen/_20sdp" />
 
-    <RelativeLayout
-        android:id="@+id/listPengumuman"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingBottom="20dp"
-        android:visibility="gone">
+            <RelativeLayout
+                android:id="@+id/listPengumuman"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="@dimen/_175sdp"
+                android:paddingRight="20dp"
+                android:visibility="gone"
+                android:paddingBottom="20dp">
 
-        <ListView
-            android:id="@+id/lvViewPengumuman"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:divider="@color/transparant"
-            android:scrollbars="none" />
-    </RelativeLayout>
+                <ListView
+                    android:id="@+id/lvViewPengumuman"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/transparant"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+
+<!--    </RelativeLayout>-->
+
 
     <FrameLayout
         android:id="@+id/replaceLayout"

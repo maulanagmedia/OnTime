@@ -32,7 +32,7 @@ public class MenuData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Data");
+        actionBar.setTitle("Data Absensi");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setElevation(0);
         initUI();

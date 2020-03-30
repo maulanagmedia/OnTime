@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -81,6 +83,13 @@ public class MenuInfoGaji extends AppCompatActivity {
 		proses = new Proses(MenuInfoGaji.this);
 		initUI();
 		initAction();
+//		if (android.os.Build.VERSION.SDK_INT >= 21) {
+//			Window window = this.getWindow();
+//			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//			window.setStatusBarColor(this.getResources().getColor(R.color.color_main));
+//		}
+
 	}
 
 	private void initUI() {
@@ -259,7 +268,7 @@ public class MenuInfoGaji extends AppCompatActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case android.R.id.home:
-				onBackPressed();
+				finish();
 				return true;
 		}
 		return super.onOptionsItemSelected(item);

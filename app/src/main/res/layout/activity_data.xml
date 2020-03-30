@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1581E8"
+    android:background="@color/colorNew"
     tools:context=".menu_pengajuan.MenuPengajuan">
 
     <androidx.viewpager.widget.ViewPager
@@ -23,7 +23,7 @@
         app:tabIndicatorColor="#464544"
         app:tabIndicatorHeight="5dp"
         app:tabSelectedTextColor="#FFFFFF"
-        app:tabTextColor="#afafaf">
+        app:tabTextColor="#EEE5E5">
 
     </com.google.android.material.tabs.TabLayout>
 </RelativeLayout>

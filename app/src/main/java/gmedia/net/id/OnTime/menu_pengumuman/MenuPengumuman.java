@@ -2,9 +2,14 @@ package gmedia.net.id.OnTime.menu_pengumuman;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -62,8 +67,18 @@ public class MenuPengumuman extends AppCompatActivity {
 		actionBar.setTitle("Pengumuman");
 		actionBar.setDisplayHomeAsUpEnabled(true);
 		actionBar.setElevation(0);
+		ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#18C1FE"));
+		actionBar.setBackgroundDrawable(colorDrawable);
+
 		initUI();
 		initAction();
+
+		if (android.os.Build.VERSION.SDK_INT >= 21) {
+			Window window = this.getWindow();
+			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+			window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+			window.setStatusBarColor(this.getResources().getColor(R.color.colorNew));
+		}
 	}
 
 	private void initUI() {
