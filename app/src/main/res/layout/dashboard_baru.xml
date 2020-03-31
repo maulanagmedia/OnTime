@@ -330,7 +330,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/ic_new_sampai_tujuan" />
+                                    android:src="@drawable/ic_absenmasukluarkantor" />
 
                             </RelativeLayout>
 
@@ -354,7 +354,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/ic_new_pindah_tujuan" />
+                                    android:src="@drawable/ic_absenpulangluarkantor" />
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
