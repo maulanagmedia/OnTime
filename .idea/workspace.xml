@@ -28,7 +28,26 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/Open_front_camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="75" column="123" selection-start-line="75" selection-start-column="123" selection-end-line="75" selection-end-column="123" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_sampai_tujuan.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -98,7 +117,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bcg_btn_berhenti_lembur.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bcg_btn_istirahat.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bcg_btn_kembali_bekerja.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/Open_front_camera.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/absen_pulang.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_gaji/MenuInfoGaji.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -116,6 +134,7 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dashboard_baru.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_sampai_tujuan.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/bg_pindah_tujuan.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/Open_front_camera.java" />
       </list>
     </option>
   </component>
@@ -142,19 +161,13 @@
             <path>
               <item name="OnTime" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
               <item name="OnTime" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="OnTime" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="OnTime" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="OnTime" type="1abcf292:AndroidViewProjectNode" />
@@ -387,13 +400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/Open_front_camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="73" column="133" selection-start-line="73" selection-start-column="133" selection-end-line="73" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_bg_red.jpg" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_new_dp.png">
       <provider selected="true" editor-type-id="images" />
@@ -601,23 +607,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_sampai_tujuan.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_absenpulang_luar_kantor_grey.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_absen_luar_kantor_grey.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_absenpulang_luar_kantor_grey.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_sampai_tujuan.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_pindah_tujuan.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/Open_front_camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="75" column="123" selection-start-line="75" selection-start-column="123" selection-end-line="75" selection-end-column="123" />
         </state>
       </provider>
     </entry>
