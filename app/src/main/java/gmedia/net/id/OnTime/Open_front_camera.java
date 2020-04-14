@@ -161,7 +161,13 @@ public class Open_front_camera extends AppCompatActivity {
 						getLocation = new GetLocationAndShowMap();
 						getLocation.GetLocation(Open_front_camera.this, backgroundBtnTakePicture);
 						Log.d("click", "clicked");
-						camera.takePicture(null, null, FrontCamera.mPicture);
+
+						try {
+							camera.takePicture(null, null, FrontCamera.mPicture);
+						}catch (Exception e){
+							Toast.makeText(Open_front_camera.this, "Gagal mendapatkan gambar, harap coba kembali", Toast.LENGTH_LONG);
+							e.printStackTrace();
+						}
 						//btnOpenCamera.setClickable(false);
 
 					}

@@ -114,8 +114,10 @@ public class FrontCamera {
 			Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);//bitmap asli
 			Matrix matrix = new Matrix();
 			matrix.postRotate(rotasi);
+			Long tsLong = System.currentTimeMillis()/1000;
+			String ts = tsLong.toString();
 			Uri uri = getImageUri(context, bitmap);
-			String namaFile = "foto.JPG";
+			String namaFile = ts+".JPG";
 			/*Cursor returnCursor =
 					((Activity) context).getApplication().getContentResolver().query(getImageUri(context, bitmap),
 							null, null, null, null);*/
@@ -636,7 +638,9 @@ public class FrontCamera {
 	public static Uri getImageUri(Context context, Bitmap inImage) {
 		ByteArrayOutputStream bytes = new ByteArrayOutputStream();
 		inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-		String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), inImage, "Title", null);
+		Long tsLong = System.currentTimeMillis()/1000;
+		String ts = tsLong.toString();
+		String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), inImage, ts, null);
 		return Uri.parse(path);
 	}
 }
