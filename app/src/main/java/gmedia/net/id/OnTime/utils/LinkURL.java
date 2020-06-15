@@ -3,7 +3,7 @@ package gmedia.net.id.OnTime.utils;
 public class LinkURL {
 //    public static String BaseURLLocalHost = "http://192.168.20.4/hrd.absensi/";
     //public static String BaseURLLocalHost = "http://gmedia.bz/ontime/";
-    public static String BaseURLLocalHost = "http://absenontime.com/";
+    public static String BaseURLLocalHost = "https://absenontime.com/";
     public static String UrlLogin = BaseURLLocalHost + "Rest/auth";
     public static String saveInstalledApp = BaseURLLocalHost + "Rest/save_app";
     public static String ScanAbsen = BaseURLLocalHost + "Rest_Scan/scan";

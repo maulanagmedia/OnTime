@@ -3,6 +3,9 @@
     <domain-config cleartextTrafficPermitted="true">
         <domain includeSubdomains="true">192.168.20.36</domain>
         <domain includeSubdomains="true">gmedia.bz</domain>
+        <domain includeSubdomains="true">*</domain>
         <domain includeSubdomains="true">absenontime.com</domain>
+        <domain includeSubdomains="true">api.ipify.org</domain>
+        <domain includeSubdomains="true">erpsmg.gmedia.id</domain>
     </domain-config>
 </network-security-config>

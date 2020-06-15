@@ -1,5 +1,6 @@
 package gmedia.net.id.OnTime.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -17,12 +18,25 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.security.ProviderInstaller;
 
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.X509TrustManager;
 
 import gmedia.net.id.OnTime.R;
 
@@ -32,8 +46,10 @@ import gmedia.net.id.OnTime.R;
  */
 
 public class ApiVolley {
+
     public static RequestQueue requestQueue;
     private SessionManager session;
+    private Context context;
 
     public ApiVolley(final Context context, JSONObject jsonBody, String requestMethod, String REST_URL, final String successDialog, final String failDialog, final int showDialogFlag, final VolleyCallback callback) {
 
@@ -47,6 +63,7 @@ public class ApiVolley {
         showDialogFlag : 1 = show successDialog / failDialog with filter
         callback : return of the response
         */
+        this.context = context;
         session = new SessionManager(context);
         final String requestBody = jsonBody.toString();
 
@@ -160,6 +177,9 @@ public class ApiVolley {
                 }
             }
         };
+
+        trustAllCertivicate();
+
         //endregion
         if (requestQueue == null) {
             requestQueue = Volley.newRequestQueue(context.getApplicationContext());
@@ -185,6 +205,71 @@ public class ApiVolley {
     public void ShowCustomDialog(Context context, int flag, String message) {
         if (flag == 1) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void trustAllCertivicate() {
+
+        updateAndroidSecurityProvider((Activity) context);
+
+        try {
+            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier(){
+                public boolean verify(String hostname, SSLSession session) {
+                    if (hostname.equalsIgnoreCase("reports.crashlytics.com") ||
+                            hostname.equalsIgnoreCase("absenontime.com") ||
+                            hostname.equalsIgnoreCase("api.ipify.org") ||
+                            hostname.equalsIgnoreCase("erpsmg.gmedia.id") ||
+                            hostname.equalsIgnoreCase("api.crashlytics.com") ||
+                            hostname.equalsIgnoreCase("settings.crashlytics.com") ||
+                            hostname.equalsIgnoreCase("clients4.google.com") ||
+                            hostname.equalsIgnoreCase("www.facebook.com") ||
+                            hostname.equalsIgnoreCase("www.instagram.com") ||
+                            hostname.equalsIgnoreCase("lh1.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh2.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh3.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh4.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh5.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh6.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh7.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh8.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("lh9.googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("googleusercontent.com") ||
+                            hostname.equalsIgnoreCase("fbcdn.net") ||
+                            hostname.equalsIgnoreCase("scontent.xx.fbcdn.net") ||
+                            hostname.equalsIgnoreCase("lookaside.facebook.com")) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }});
+
+            // SSL Tipe TLS
+            SSLContext context = SSLContext.getInstance("TLS");
+
+            context.init(null, new X509TrustManager[]{new X509TrustManager(){
+                public void checkClientTrusted(X509Certificate[] chain,
+                                               String authType) throws CertificateException {}
+                public void checkServerTrusted(X509Certificate[] chain,
+                                               String authType) throws CertificateException {}
+                public X509Certificate[] getAcceptedIssuers() {
+                    return new X509Certificate[0];
+                }}}, new SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(
+                    context.getSocketFactory());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void updateAndroidSecurityProvider(Activity callingActivity) {
+        try {
+            ProviderInstaller.installIfNeeded(callingActivity);
+        } catch (GooglePlayServicesRepairableException e) {
+            // Thrown when Google Play Services is not installed, up-to-date, or enabled
+            // Show dialog to allow users to install, update, or otherwise enable Google Play services.
+            GooglePlayServicesUtil.getErrorDialog(e.getConnectionStatusCode(), callingActivity, 0);
+        } catch (GooglePlayServicesNotAvailableException e) {
+            //Log.e("SecurityException", "Google Play Services not available.");
         }
     }
 }
