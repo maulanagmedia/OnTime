@@ -8,6 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -115,6 +116,7 @@ public class Login extends AppCompatActivity {
 									String approvalIjin = object.getJSONObject("response").getString("ijin");
 									session.createLoginSession(user_id, token, id_karyawan, id_company, id_user, approvalCuti, approvalIjin);
 									Intent intent = new Intent(Login.this, MainActivityBaru.class);
+									Log.d("Login", "onsuccess "+result);
 									startActivity(intent);
 									finish();
 								} else if (status.equals("401")) {

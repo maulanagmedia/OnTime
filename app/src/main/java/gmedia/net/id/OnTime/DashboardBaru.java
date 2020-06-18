@@ -40,6 +40,7 @@ import gmedia.net.id.OnTime.menu_gaji.MenuInfoGaji;
 import gmedia.net.id.OnTime.menu_keterlambatan.Keterlambatan;
 import gmedia.net.id.OnTime.menu_pengajuan.MenuPengajuan;
 import gmedia.net.id.OnTime.menu_pengumuman.MenuPengumuman;
+import gmedia.net.id.OnTime.menu_reimburse.ReimburseActivity;
 import gmedia.net.id.OnTime.menu_scanlog.Scanlog;
 import gmedia.net.id.OnTime.menu_utama.AbsenMasuk;
 import gmedia.net.id.OnTime.menu_utama.AbsenPulang;
@@ -75,6 +76,7 @@ public class DashboardBaru extends Fragment {
 	private Boolean klikToVisibleRePassBaru = true;
 	private DialogSukses dialogSukses;
 	private DialogGagal dialogGagal;
+	private final  String TAG = "Dashborad";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
@@ -217,6 +219,15 @@ public class DashboardBaru extends Fragment {
 					@Override
 					public void onClick(View view) {
 						Intent intent = new Intent(context, Keterlambatan.class);
+						((Activity) context).startActivity(intent);
+						dialogMenu.dismiss();
+					}
+				});
+				LinearLayout menuReimbusement = dialogMenu.findViewById(R.id.menuReimbusement);
+				menuReimbusement.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Intent intent = new Intent(context, ReimburseActivity.class);
 						((Activity) context).startActivity(intent);
 						dialogMenu.dismiss();
 					}
@@ -452,6 +463,7 @@ public class DashboardBaru extends Fragment {
 				proses.DismissDialog();
 				try {
 					JSONObject object = new JSONObject(result);
+					Log.d(TAG,"onsuccess "+result);
 					String status = object.getJSONObject("metadata").getString("status");
 					String message = object.getJSONObject("metadata").getString("message");
 					if (status.equals("200")) {

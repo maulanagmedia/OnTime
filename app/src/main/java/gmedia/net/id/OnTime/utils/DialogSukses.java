@@ -33,6 +33,22 @@ public class DialogSukses {
 		dialog.setCanceledOnTouchOutside(false);
 	}
 
+	public DialogSukses(final Context context, String end) {
+		this.context = context;
+		dialog = new Dialog(context);
+		dialog.setContentView(R.layout.popup_sukses);
+		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+		RelativeLayout btnOk = (RelativeLayout) dialog.findViewById(R.id.btnOkPopupSukses);
+		btnOk.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				dialog.dismiss();
+				((Activity) context).finish();
+			}
+		});
+		dialog.setCanceledOnTouchOutside(false);
+	}
+
 	public void ShowDialog() {
 		dialog.show();
 		final Handler handler = new Handler();

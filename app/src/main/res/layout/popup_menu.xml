@@ -152,6 +152,28 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/menuReimbusement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/reimbus" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reimburse"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSizeMenu" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/menuApprovalCuti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

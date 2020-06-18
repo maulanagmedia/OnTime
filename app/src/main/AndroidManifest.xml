@@ -31,8 +31,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".menu_reimburse.DetailReimburseActivity"></activity>
+        <activity
+            android:name=".menu_reimburse.AddReimburseActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".menu_reimburse.ReimburseActivity" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -97,8 +102,7 @@
         <activity
             android:name=".Login"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBarNew">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBarNew" />
         <activity
             android:name=".Open_front_camera"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -114,8 +118,8 @@
         </activity>
         <activity
             android:name=".menu_pengajuan.MenuPengajuan"
-            android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".menu_data.MenuData"
             android:screenOrientation="portrait" />
