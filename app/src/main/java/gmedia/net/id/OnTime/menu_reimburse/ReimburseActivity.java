@@ -44,6 +44,7 @@ public class ReimburseActivity extends AppCompatActivity {
     ReimburseAdapter reimburseAdapter;
     int start =0, count =20;
     SessionManager sessionManager;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class ReimburseActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setElevation(0);
         sessionManager = new SessionManager(ReimburseActivity.this);
+        linearLayoutManager = new LinearLayoutManager(ReimburseActivity.this);
         initUi();
     }
 
@@ -126,6 +128,7 @@ public class ReimburseActivity extends AppCompatActivity {
         start =0;
         count=20;
         loadHistoryReimburse("");
+        reimburseAdapter.notifyDataSetChanged();
         imgFilter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,7 +152,7 @@ public class ReimburseActivity extends AppCompatActivity {
 
     private void setupListRiwayatReimburse() {
         reimburseAdapter = new ReimburseAdapter(ReimburseActivity.this, reimburseModels);
-        rvHistoryReimburse.setLayoutManager(new LinearLayoutManager(ReimburseActivity.this));
+        rvHistoryReimburse.setLayoutManager(linearLayoutManager);
         rvHistoryReimburse.setAdapter(reimburseAdapter);
     }
 

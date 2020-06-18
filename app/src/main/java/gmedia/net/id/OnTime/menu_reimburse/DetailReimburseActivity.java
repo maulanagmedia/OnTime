@@ -189,10 +189,12 @@ public class DetailReimburseActivity extends AppCompatActivity {
                     String message = object.getJSONObject("metadata").getString("message");
                     if (status.equals("200")) {
                         dialogSukses.ShowDialog();
+                        dialog.dismiss();
                     } else {
                         DialogGagal.message = message;
                         dialogGagal = new DialogGagal(DetailReimburseActivity.this);
                         dialogGagal.ShowDialog();
+                        dialog.dismiss();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

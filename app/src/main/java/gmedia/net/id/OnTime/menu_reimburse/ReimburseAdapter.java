@@ -78,6 +78,17 @@ public class ReimburseAdapter extends RecyclerView.Adapter<ReimburseAdapter.View
         return reimburseModels.size();
     }
 
+    @Override
+    public long getItemId(int position) {
+        long id = Long.parseLong(reimburseModels.get(position).getId());
+        return id;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvInsertAt, tvNama, tvTanggal, tvNominal, tvStatus;
         private RelativeLayout rlStatus;
