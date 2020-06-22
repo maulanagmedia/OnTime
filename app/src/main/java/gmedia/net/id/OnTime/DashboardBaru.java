@@ -40,6 +40,7 @@ import gmedia.net.id.OnTime.menu_gaji.MenuInfoGaji;
 import gmedia.net.id.OnTime.menu_keterlambatan.Keterlambatan;
 import gmedia.net.id.OnTime.menu_pengajuan.MenuPengajuan;
 import gmedia.net.id.OnTime.menu_pengumuman.MenuPengumuman;
+import gmedia.net.id.OnTime.menu_reimburse.ApprovalReimburs;
 import gmedia.net.id.OnTime.menu_reimburse.ReimburseActivity;
 import gmedia.net.id.OnTime.menu_scanlog.Scanlog;
 import gmedia.net.id.OnTime.menu_utama.AbsenMasuk;
@@ -162,6 +163,20 @@ public class DashboardBaru extends Fragment {
 						dialogMenu.dismiss();
 					}
 				});
+
+				LinearLayout menuApprovalReimburs = (LinearLayout) dialogMenu.findViewById(R.id.menuApprovalReimburs);
+				if (session.getKeyApprovalReimburs().equals("1")) {
+					menuApprovalReimburs.setVisibility(View.VISIBLE);
+					menuApprovalReimburs.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View view) {
+							Intent intent = new Intent(context, ApprovalReimburs.class);
+							((Activity) context).startActivity(intent);
+							dialogMenu.dismiss();
+						}
+					});
+				}
+
 				LinearLayout menuApprovalCuti = (LinearLayout) dialogMenu.findViewById(R.id.menuApprovalCuti);
 				if (session.getKeyApprovalCuti().equals("1")) {
 					menuApprovalCuti.setVisibility(View.VISIBLE);

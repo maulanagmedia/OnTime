@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.MediaRouteButton;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -65,6 +67,7 @@ public class AddReimburseActivity extends AppCompatActivity {
     private DialogSukses dialogSukses;
     Button btnKirimReimburse;
     int bitmap_size = 100; // range 1 - 100
+    private Activity activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,8 @@ public class AddReimburseActivity extends AppCompatActivity {
         actionBar.setTitle("Tambah Reimburse");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setElevation(0);
+
+        activity = this;
         tglBayar= "";
 
         initUi();
@@ -130,9 +135,26 @@ public class AddReimburseActivity extends AppCompatActivity {
         btnKirimReimburse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validasiFormReimburs()){
-                    prepareDataRemburse();
-                }
+
+                AlertDialog dialog = new AlertDialog.Builder(activity)
+                        .setTitle("Konfirmasi")
+                        .setMessage("Apakah anda yakin ingin menyimpan?")
+                        .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                if(validasiFormReimburs()){
+                                    prepareDataRemburse();
+                                }
+                            }
+                        })
+                        .show();
             }
         });
     }

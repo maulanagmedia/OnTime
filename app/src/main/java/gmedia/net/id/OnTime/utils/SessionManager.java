@@ -44,6 +44,7 @@ public class SessionManager {
 	public static final String KEY_ID_PERUSAHAAN = "id_perusahaan";
 	public static final String KEY_APPROVAL_CUTI = "approval";
 	public static final String KEY_APPROVAL_IJIN = "approval";
+	public static final String KEY_APPROVAL_REIMBURS = "apv_reimburs";
 
 
 	// Constructor
@@ -77,6 +78,15 @@ public class SessionManager {
 		editorIDPerusahaan.commit();*/
 		editor.putBoolean(IS_ID_PERUSAHAAN, true);
 		editor.putString(KEY_ID_PERUSAHAAN, id_perusahaan);
+		editor.commit();
+	}
+
+	public void saveApprovalReimburs(String apvReimburs) {
+		/*prefIDPerusahaan = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
+		editorIDPerusahaan = prefIDPerusahaan.edit();
+		editorIDPerusahaan.putString(KEY_ID_PERUSAHAAN, id_perusahaan);
+		editorIDPerusahaan.commit();*/
+		editor.putString(KEY_APPROVAL_REIMBURS, apvReimburs);
 		editor.commit();
 	}
 
@@ -144,6 +154,10 @@ public class SessionManager {
 
 	public String getKeyApprovalIjin() {
 		return pref.getString(KEY_APPROVAL_IJIN, "");
+	}
+
+	public String getKeyApprovalReimburs() {
+		return pref.getString(KEY_APPROVAL_REIMBURS, "");
 	}
 
 	/**

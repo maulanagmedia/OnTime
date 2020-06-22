@@ -31,5 +31,6 @@ public class LinkURL {
 	public static String updateLocationS = "https://erpsmg.gmedia.id/hrd/rest/track_location/";
 	public static String urlPostReimburse = BaseURLLocalHost+"Rest_Reimburse/add_reimburse";
     public static String urlRiwayatReimburse = BaseURLLocalHost+"Rest_Reimburse/list_reimburse";
+    public static String urlListApprovalReimburs = BaseURLLocalHost+"Rest_Reimburse/list_apv_reimburse";
     public static String urlPostApproval = BaseURLLocalHost+"Rest_Reimburse/approve_reimburse";
 }

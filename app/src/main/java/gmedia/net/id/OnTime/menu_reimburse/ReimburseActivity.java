@@ -42,7 +42,7 @@ public class ReimburseActivity extends AppCompatActivity {
     RecyclerView rvHistoryReimburse;
     List<ReimburseModel> reimburseModels = new ArrayList<>();
     ReimburseAdapter reimburseAdapter;
-    int start =0, count =20;
+    int start = 0, count = 20;
     SessionManager sessionManager;
     LinearLayoutManager linearLayoutManager;
 
@@ -151,7 +151,7 @@ public class ReimburseActivity extends AppCompatActivity {
     }
 
     private void setupListRiwayatReimburse() {
-        reimburseAdapter = new ReimburseAdapter(ReimburseActivity.this, reimburseModels);
+        reimburseAdapter = new ReimburseAdapter(ReimburseActivity.this, reimburseModels, "0");
         rvHistoryReimburse.setLayoutManager(linearLayoutManager);
         rvHistoryReimburse.setAdapter(reimburseAdapter);
     }

@@ -23,12 +23,15 @@ import gmedia.net.id.OnTime.R;
 import gmedia.net.id.OnTime.utils.ConvertDate;
 
 public class ReimburseAdapter extends RecyclerView.Adapter<ReimburseAdapter.ViewHolder>   {
-    List<ReimburseModel> reimburseModels;
-    Context context;
 
-    public ReimburseAdapter(Context context, List<ReimburseModel> models){
+    private List<ReimburseModel> reimburseModels;
+    private Context context;
+    private String flag = "";
+
+    public ReimburseAdapter(Context context, List<ReimburseModel> models, String flag){
         this.context =context;
         this.reimburseModels = models;
+        this.flag = flag;
     }
 
     @NonNull
@@ -63,14 +66,18 @@ public class ReimburseAdapter extends RecyclerView.Adapter<ReimburseAdapter.View
 //        }else{
 //            holder.rlStatus.setVisibility(View.GONE);
 //        }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), DetailReimburseActivity.class);
-                intent.putExtra(DetailReimburseActivity.REIMBURSE_ITEM, new Gson().toJson(model));
-                context.startActivity(intent);
-            }
-        });
+
+        if(flag.equals("1") && model.status.equals("0")){
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(holder.itemView.getContext(), DetailReimburseActivity.class);
+                    intent.putExtra(DetailReimburseActivity.REIMBURSE_ITEM, new Gson().toJson(model));
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override

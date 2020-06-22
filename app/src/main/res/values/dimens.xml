@@ -7,8 +7,8 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="textMenuDashboard">10sp</dimen>
     <dimen name="imageSizeCloseMenu">20dp</dimen>
-    <dimen name="textSizeMenu">25sp</dimen>
-    <dimen name="textSizeMenuLogout">30sp</dimen>
+    <dimen name="textSizeMenu">20sp</dimen>
+    <dimen name="textSizeMenuLogout">18sp</dimen>
     <dimen name="setLayoutButtonCheckInOut">150dp</dimen>
     <dimen name="textSizeButtonCheckInOut">22sp</dimen>
     <dimen name="textSizeDashboard">14sp</dimen>

@@ -5,6 +5,241 @@
     android:alpha="0.9"
     android:background="#06ADF0">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_32sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_16sdp">
+
+            <LinearLayout
+                android:id="@+id/menuInfoGaji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_info_gaji" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Info Gaji"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuScanlog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_scanlog" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scanlog"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_data_absensi" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data Absensi"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuPengajuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_pengajuan_cuti_ijin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengajuan Cuti / Ijin"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuPengumuman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_pengumuman" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pengumuman"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/menuKeterlambatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_menu_keterlambatan" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Keterlambatan"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuReimbusement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/reimbus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reimburse"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuApprovalReimburs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_aparove_cuti" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Approval Reimburs"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuApprovalCuti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_aparove_cuti" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Approval Cuti"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuApprovalIjin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/icon_aprove_ijin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Approval Ijin"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeMenu" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <ImageView
         android:id="@+id/closePopupMenu"
@@ -13,214 +248,6 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="25dp"
         android:src="@drawable/cross" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/menuInfoGaji"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_info_gaji" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Info Gaji"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuScanlog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_scanlog" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Scanlog"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuData"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_data_absensi" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Data Absensi"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuPengajuan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_pengajuan_cuti_ijin" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pengajuan Cuti / Ijin"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuPengumuman"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_pengumuman" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pengumuman"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/menuKeterlambatan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_menu_keterlambatan" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Keterlambatan"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuReimbusement"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/reimbus" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reimburse"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuApprovalCuti"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_aparove_cuti" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Approval Cuti"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/menuApprovalIjin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/icon_aprove_ijin" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Approval Ijin"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/textSizeMenu" />
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/logout"

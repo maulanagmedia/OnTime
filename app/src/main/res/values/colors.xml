@@ -17,4 +17,5 @@
     <color name="colorDarkTitle">#81000000</color>
     <color name="colorDark">#000</color>
     <color name="colorGrey">#63828080</color>
+    <color name="colorBlack">#000000</color>
 </resources>

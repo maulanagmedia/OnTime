@@ -31,11 +31,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".menu_reimburse.DetailReimburseActivity"></activity>
+
+        <activity android:name=".menu_reimburse.ApprovalReimburs"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".menu_reimburse.DetailReimburseActivity"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".menu_reimburse.AddReimburseActivity"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
         <activity android:name=".menu_reimburse.ReimburseActivity" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">

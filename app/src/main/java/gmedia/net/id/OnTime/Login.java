@@ -114,7 +114,9 @@ public class Login extends AppCompatActivity {
 									String id_user = object.getJSONObject("response").getString("id_user");
 									String approvalCuti = object.getJSONObject("response").getString("cuti");
 									String approvalIjin = object.getJSONObject("response").getString("ijin");
+									String approvalIReimburs = object.getJSONObject("response").getString("reimburs");
 									session.createLoginSession(user_id, token, id_karyawan, id_company, id_user, approvalCuti, approvalIjin);
+									session.saveApprovalReimburs(approvalIReimburs);
 									Intent intent = new Intent(Login.this, MainActivityBaru.class);
 									Log.d("Login", "onsuccess "+result);
 									startActivity(intent);
