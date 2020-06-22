@@ -29,4 +29,7 @@ public class LinkURL {
 	public static String upVersion = BaseURLLocalHost + "Rest/version";
 	public static String urlIpPublic = "https://api.ipify.org";
 	public static String updateLocationS = "https://erpsmg.gmedia.id/hrd/rest/track_location/";
+	public static String urlPostReimburse = BaseURLLocalHost+"Rest_Reimburse/add_reimburse";
+    public static String urlRiwayatReimburse = BaseURLLocalHost+"Rest_Reimburse/list_reimburse";
+    public static String urlPostApproval = BaseURLLocalHost+"Rest_Reimburse/approve_reimburse";
 }
