@@ -114,6 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="NAMAMU"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/textSizeDashboard" />
 
@@ -121,8 +122,8 @@
                     android:id="@+id/nikProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="5dp"
                     android:text="NIK 123456789"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/textSizeDashboard" />

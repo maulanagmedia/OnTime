@@ -40,6 +40,7 @@ import gmedia.net.id.OnTime.menu_gaji.MenuInfoGaji;
 import gmedia.net.id.OnTime.menu_keterlambatan.Keterlambatan;
 import gmedia.net.id.OnTime.menu_pengajuan.MenuPengajuan;
 import gmedia.net.id.OnTime.menu_pengumuman.MenuPengumuman;
+import gmedia.net.id.OnTime.menu_pengumuman.PengumumanActivity;
 import gmedia.net.id.OnTime.menu_reimburse.ApprovalReimburs;
 import gmedia.net.id.OnTime.menu_reimburse.ReimburseActivity;
 import gmedia.net.id.OnTime.menu_scanlog.Scanlog;
@@ -78,6 +79,7 @@ public class DashboardBaru extends Fragment {
 	private DialogSukses dialogSukses;
 	private DialogGagal dialogGagal;
 	private final  String TAG = "Dashborad";
+	Dialog dialogMenu;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class DashboardBaru extends Fragment {
 		context = getContext();
 		proses = new Proses(context);
 		session = new SessionManager(context);
+		session.setMenu(false);
 		dialogSukses = new DialogSukses(context);
 
 		FirebaseApp.initializeApp(context);
@@ -108,6 +111,7 @@ public class DashboardBaru extends Fragment {
 			getLocation.GetLocation(context);
 		}*/
 		initUI();
+		dialogMenu = new Dialog(context);
 		initAction();
 		return view;
 	}
@@ -133,8 +137,7 @@ public class DashboardBaru extends Fragment {
 		btnMenu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-
-				final Dialog dialogMenu = new Dialog(context);
+				session.setMenu(true);
 				dialogMenu.getWindow().getAttributes().windowAnimations = R.style.animasiDialog;
 				dialogMenu.setContentView(R.layout.popup_menu);
 				dialogMenu.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -142,6 +145,7 @@ public class DashboardBaru extends Fragment {
 				btnClose.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
+						session.setMenu(false);
 						dialogMenu.dismiss();
 					}
 				});
@@ -158,7 +162,7 @@ public class DashboardBaru extends Fragment {
 				menuPengumuman.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View view) {
-						Intent intent = new Intent(context, MenuPengumuman.class);
+						Intent intent = new Intent(context, PengumumanActivity.class);
 						((Activity) context).startActivity(intent);
 						dialogMenu.dismiss();
 					}
@@ -567,6 +571,17 @@ public class DashboardBaru extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		if(session.isMenu()){
+			dialogMenu.show();
+		}else{
+			dialogMenu.dismiss();
+		}
 		prepareDataProfle();
+	}
+
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		session.setMenu(false);
 	}
 }

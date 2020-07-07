@@ -34,6 +34,7 @@ public class SessionManager {
 	private static final String IS_LOGIN = "IsLoggedIn";
 	private static final String IS_CHECK = "IsCheckIn";
 	private static final String IS_ID_PERUSAHAAN = "HaveID";
+	public static final String IS_KEY_MENU ="menu";
 
 	// User name (make variable public to access from outside)
 	public static final String KEY_USER_ID = "name";
@@ -45,6 +46,7 @@ public class SessionManager {
 	public static final String KEY_APPROVAL_CUTI = "approval";
 	public static final String KEY_APPROVAL_IJIN = "approval";
 	public static final String KEY_APPROVAL_REIMBURS = "apv_reimburs";
+
 
 
 	// Constructor
@@ -78,6 +80,11 @@ public class SessionManager {
 		editorIDPerusahaan.commit();*/
 		editor.putBoolean(IS_ID_PERUSAHAAN, true);
 		editor.putString(KEY_ID_PERUSAHAAN, id_perusahaan);
+		editor.commit();
+	}
+
+	public void setMenu(boolean menu){
+		editor.putBoolean(IS_KEY_MENU, menu);
 		editor.commit();
 	}
 
@@ -203,5 +210,9 @@ public class SessionManager {
 
 	public boolean isIDPerusahaan() {
 		return pref.getBoolean(IS_ID_PERUSAHAAN, false);
+	}
+
+	public boolean isMenu() {
+		return pref.getBoolean(IS_KEY_MENU, false);
 	}
 }

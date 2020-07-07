@@ -85,7 +85,7 @@ public class ApprovalCuti extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(ApprovalCuti.this, jBody, "POST", LinkURL.viewApprovalCuti, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(ApprovalCuti.this, jBody, "POST", LinkURL.listApprovalCuti, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				isLoading = false;
@@ -167,7 +167,7 @@ public class ApprovalCuti extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(ApprovalCuti.this, jBody, "POST", LinkURL.viewApprovalCuti, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(ApprovalCuti.this, jBody, "POST", LinkURL.listApprovalCuti, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				proses.DismissDialog();

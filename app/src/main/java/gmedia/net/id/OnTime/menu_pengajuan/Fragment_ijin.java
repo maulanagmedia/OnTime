@@ -1,11 +1,17 @@
 package gmedia.net.id.OnTime.menu_pengajuan;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import androidx.fragment.app.Fragment;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +37,7 @@ import java.util.Locale;
 
 import gmedia.net.id.OnTime.R;
 import gmedia.net.id.OnTime.menu_history_ijin.HistoryIjin;
+import gmedia.net.id.OnTime.menu_reimburse.DetailReimburseActivity;
 import gmedia.net.id.OnTime.utils.ApiVolley;
 import gmedia.net.id.OnTime.utils.DialogGagal;
 import gmedia.net.id.OnTime.utils.DialogSukses;
@@ -53,6 +60,7 @@ public class Fragment_ijin extends Fragment {
 	private RelativeLayout historyIjin;
 	private DialogSukses dialogSukses;
 	private DialogGagal dialogGagal;
+	Dialog dialog;
 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		view = inflater.inflate(R.layout.fragment_ijin, container, false);
@@ -148,7 +156,28 @@ public class Fragment_ijin extends Fragment {
 					alasan.requestFocus();
 					return;
 				} else {
-					prepareDataAddIjin();
+					dialog = new Dialog(context);
+					dialog.setContentView(R.layout.popup_reimburse);
+					dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+					dialog.setCanceledOnTouchOutside(true);
+					Button btnTerima = dialog.findViewById(R.id.btn_ya);
+					Button btnTolak = dialog.findViewById(R.id.btn_tidak);
+					TextView tvMessage = dialog.findViewById(R.id.tv_message);
+					tvMessage.setText("Anda yakin ingin mengajukan ijin ?");
+					btnTerima.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							prepareDataAddIjin();
+						}
+					});
+
+					btnTolak.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							dialog.dismiss();
+						}
+					});
+					dialog.show();
 				}
 			}
 		});

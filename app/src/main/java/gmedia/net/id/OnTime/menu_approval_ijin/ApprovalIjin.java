@@ -89,7 +89,7 @@ public class ApprovalIjin extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(ApprovalIjin.this, jBody, "POST", LinkURL.viewApprovalIjin, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(ApprovalIjin.this, jBody, "POST", LinkURL.listApprovalIjin, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				isLoading = false;
@@ -170,7 +170,7 @@ public class ApprovalIjin extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(ApprovalIjin.this, jBody, "POST", LinkURL.viewApprovalIjin, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(ApprovalIjin.this, jBody, "POST", LinkURL.listApprovalIjin, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				proses.DismissDialog();

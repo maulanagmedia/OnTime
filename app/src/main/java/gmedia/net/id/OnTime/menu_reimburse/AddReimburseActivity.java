@@ -142,7 +142,7 @@ public class AddReimburseActivity extends AppCompatActivity {
                         .setNegativeButton("Tidak", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
+                                dialog.dismiss();
                             }
                         })
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {

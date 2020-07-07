@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -38,6 +39,7 @@ public class HistoryIjin extends AppCompatActivity {
 	private DialogDataTidakDitemukan dialogDataTidakDitemukan;
 	private DialogGagal dialogGagal;
 	private LinearLayout tableHistoryIjin;
+	TextView tvKosong;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class HistoryIjin extends AppCompatActivity {
 
 	private void initUI() {
 		listView = (ListView) findViewById(R.id.listViewHistoryIjin);
+		tvKosong = findViewById(R.id.tv_kosong);
 		LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		footerList = li.inflate(R.layout.footer_list, null);
 		tableHistoryIjin=(LinearLayout)findViewById(R.id.tableHistoryIjin);
@@ -70,7 +73,7 @@ public class HistoryIjin extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(HistoryIjin.this, jBody, "POST", LinkURL.viewIjin, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(HistoryIjin.this, jBody, "POST", LinkURL.historyIjin, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				isLoading = false;
@@ -95,6 +98,7 @@ public class HistoryIjin extends AppCompatActivity {
 						adapter = new ListAdapterHistoryIjin(HistoryIjin.this, historyIjin);
 						listView.setAdapter(adapter);
 						tableHistoryIjin.setVisibility(View.VISIBLE);
+						tvKosong.setVisibility(View.GONE);
 						listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 							@Override
 							public void onScrollStateChanged(AbsListView absListView, int i) {
@@ -114,12 +118,14 @@ public class HistoryIjin extends AppCompatActivity {
 						});
 					}else if (status.equals("404")) {
 						tableHistoryIjin.setVisibility(View.GONE);
+						tvKosong.setVisibility(View.VISIBLE);
 						dialogDataTidakDitemukan = new DialogDataTidakDitemukan(HistoryIjin.this);
 						dialogDataTidakDitemukan.ShowDialog();
 					} else {
 //						Toast.makeText(HistoryCuti.this, message, Toast.LENGTH_LONG).show();
 						tableHistoryIjin.setVisibility(View.GONE);
 						DialogGagal.message = message;
+						tvKosong.setVisibility(View.VISIBLE);
 						dialogGagal = new DialogGagal(HistoryIjin.this);
 						dialogGagal.ShowDialog();
 					}

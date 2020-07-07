@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -30,6 +31,7 @@ public class HistoryCuti extends AppCompatActivity {
 	private ArrayList<ModelHistoryCuti> historyCuti;
 	private ArrayList<ModelHistoryCuti> moreHistoryCuti;
 	private ListView listView;
+	TextView tvKosong;
 	private String tglAwal[] =
 			{
 					"02/11/2018",
@@ -81,6 +83,7 @@ public class HistoryCuti extends AppCompatActivity {
 		LayoutInflater li = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		footerList = li.inflate(R.layout.footer_list, null);
 		table = (LinearLayout) findViewById(R.id.tableHistoryCuti);
+		tvKosong = findViewById(R.id.tv_kosong);
 	}
 
 	private void initAction() {
@@ -94,7 +97,7 @@ public class HistoryCuti extends AppCompatActivity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ApiVolley request = new ApiVolley(HistoryCuti.this, jBody, "POST", LinkURL.viewCuti, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(HistoryCuti.this, jBody, "POST", LinkURL.historyCuti, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				isLoading = false;
@@ -119,6 +122,7 @@ public class HistoryCuti extends AppCompatActivity {
 						adapter = new ListAdapterHistoryCuti(HistoryCuti.this, historyCuti);
 						listView.setAdapter(adapter);
 						table.setVisibility(View.VISIBLE);
+						tvKosong.setVisibility(View.GONE);
 						listView.setOnScrollListener(new AbsListView.OnScrollListener() {
 							@Override
 							public void onScrollStateChanged(AbsListView absListView, int i) {
@@ -139,11 +143,13 @@ public class HistoryCuti extends AppCompatActivity {
 						});
 					} else if (status.equals("404")) {
 						table.setVisibility(View.GONE);
+						tvKosong.setVisibility(View.VISIBLE);
 						dialogDataTidakDitemukan = new DialogDataTidakDitemukan(HistoryCuti.this);
 						dialogDataTidakDitemukan.ShowDialog();
 					} else {
 //						Toast.makeText(HistoryCuti.this, message, Toast.LENGTH_LONG).show();
 						table.setVisibility(View.GONE);
+						tvKosong.setVisibility(View.VISIBLE);
 						DialogGagal.message = message;
 						dialogGagal = new DialogGagal(HistoryCuti.this);
 						dialogGagal.ShowDialog();

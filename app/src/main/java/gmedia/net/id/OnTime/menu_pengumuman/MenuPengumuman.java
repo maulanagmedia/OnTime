@@ -90,7 +90,7 @@ public class MenuPengumuman extends AppCompatActivity {
 	private void initAction() {
 //        dataInfoGaji = prepareDataInfoGaji();
 		proses.ShowDialog();
-		ApiVolley request = new ApiVolley(MenuPengumuman.this, new JSONObject(), "POST", LinkURL.listPengumuman, "", "", 0, new ApiVolley.VolleyCallback() {
+		ApiVolley request = new ApiVolley(MenuPengumuman.this, new JSONObject(), "POST", LinkURL.viewPengumuman, "", "", 0, new ApiVolley.VolleyCallback() {
 			@Override
 			public void onSuccess(String result) {
 				proses.DismissDialog();

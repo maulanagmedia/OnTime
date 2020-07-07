@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1581E8"
+    android:background="#00CCFF"
     tools:context=".menu_history_cuti.HistoryCuti">
 
     <RelativeLayout
@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="KOSONG"
+            android:id="@+id/tv_kosong"
             android:textColor="#ababab"
             android:textSize="50sp" />
 
