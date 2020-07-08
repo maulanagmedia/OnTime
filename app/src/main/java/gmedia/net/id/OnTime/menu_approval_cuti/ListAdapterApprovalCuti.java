@@ -51,7 +51,7 @@ public class ListAdapterApprovalCuti extends ArrayAdapter {
 	}
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = new ViewHolder();
 		if (convertView == null) {
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -67,7 +67,7 @@ public class ListAdapterApprovalCuti extends ArrayAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		ModelApprovalCuti modelApprovalCuti = listApprovalCuti.get(position);
+		final ModelApprovalCuti modelApprovalCuti = listApprovalCuti.get(position);
 		holder.id = modelApprovalCuti.getId();
 		holder.nama.setText(modelApprovalCuti.getNama());
 //		holder.tanggal.setText(modelApprovalCuti.getTglAwal()+" - "+modelApprovalCuti.getTglAkhir());
@@ -125,9 +125,8 @@ public class ListAdapterApprovalCuti extends ArrayAdapter {
 							String status = object.getJSONObject("metadata").getString("status");
 							String message = object.getJSONObject("metadata").getString("message");
 							if (status.equals("200")) {
-								Intent intent = new Intent(context, ApprovalCuti.class);
-								((Activity) context).startActivity(intent);
-								((Activity) context).finish();
+								listApprovalCuti.remove(listApprovalCuti.get(position));
+								notifyDataSetChanged();
 								Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 							} else {
 								Toast.makeText(context, message, Toast.LENGTH_LONG).show();

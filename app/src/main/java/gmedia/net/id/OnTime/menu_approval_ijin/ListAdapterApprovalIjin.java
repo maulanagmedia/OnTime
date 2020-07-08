@@ -53,7 +53,7 @@ public class ListAdapterApprovalIjin extends ArrayAdapter {
 
 	@NonNull
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = new ViewHolder();
 		if (convertView == null) {
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
@@ -125,9 +125,8 @@ public class ListAdapterApprovalIjin extends ArrayAdapter {
 							String status = object.getJSONObject("metadata").getString("status");
 							String message = object.getJSONObject("metadata").getString("message");
 							if (status.equals("200")) {
-								Intent intent = new Intent(context, ApprovalIjin.class);
-								((Activity) context).startActivity(intent);
-								((Activity) context).finish();
+								list.remove(list.get(position));
+								notifyDataSetChanged();
 								Toast.makeText(context, message, Toast.LENGTH_LONG).show();
 							} else {
 								Toast.makeText(context, message, Toast.LENGTH_LONG).show();

@@ -6,64 +6,22 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="onsucc" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a6b2c0-bde0-4a6e-8edf-a6f0c501383d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengumuman/PengumumanActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengumuman/PengumumanAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pengumuman.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_pengumuman.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_confirm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebase_firebase_jobdispatcher_0_8_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebase_firebase_jobdispatcher_0_8_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_GrenderG_Toasty_1_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_GrenderG_Toasty_1_4_2_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/DashboardBaru.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/DashboardBaru.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_cuti/ApprovalCuti.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_cuti/ApprovalCuti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_ijin/ApprovalIjin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_ijin/ApprovalIjin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_history_cuti/HistoryCuti.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_history_cuti/HistoryCuti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_history_ijin/HistoryIjin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_history_ijin/HistoryIjin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengajuan/Fragment_cuti.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengajuan/Fragment_cuti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengajuan/Fragment_ijin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengajuan/Fragment_ijin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengumuman/MenuPengumuman.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_pengumuman/MenuPengumuman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_reimburse/AddReimburseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_reimburse/AddReimburseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/utils/LinkURL.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/utils/LinkURL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/utils/SessionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/utils/SessionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_cuti.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_cuti.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_ijin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_ijin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dashboard_baru.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dashboard_baru.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_absensi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_absensi.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ijin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_ijin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_jadwal_kerja.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_jadwal_kerja.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lembur.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lembur.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_cuti/ListAdapterApprovalCuti.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_cuti/ListAdapterApprovalCuti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_ijin/ListAdapterApprovalIjin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/gmedia/net/id/OnTime/menu_approval_ijin/ListAdapterApprovalIjin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="58f3e28a" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_TV_API_27" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -263,22 +221,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="133" y="23" width="1006" height="777" key="CommitChangelistDialog2/0.23.1280.777@0.23.1280.777" timestamp="1592817720625" />
-    <state width="1238" height="340" key="GridCell.Tab.0.bottom" timestamp="1594107858055">
+    <state width="1238" height="340" key="GridCell.Tab.0.bottom" timestamp="1594177785135">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1594107858055" />
-    <state width="1238" height="340" key="GridCell.Tab.0.center" timestamp="1594107858055">
+    <state width="1238" height="340" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1594177785135" />
+    <state width="1238" height="340" key="GridCell.Tab.0.center" timestamp="1594177785134">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1594107858055" />
-    <state width="1238" height="340" key="GridCell.Tab.0.left" timestamp="1594107858055">
+    <state width="1238" height="340" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1594177785134" />
+    <state width="1238" height="340" key="GridCell.Tab.0.left" timestamp="1594177785134">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1594107858055" />
-    <state width="1238" height="340" key="GridCell.Tab.0.right" timestamp="1594107858055">
+    <state width="1238" height="340" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1594177785134" />
+    <state width="1238" height="340" key="GridCell.Tab.0.right" timestamp="1594177785134">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1238" height="340" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1594107858055" />
+    <state width="1238" height="340" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1594177785134" />
     <state width="1223" height="227" key="GridCell.Tab.1.bottom" timestamp="1592817028823">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
